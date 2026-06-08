@@ -1,0 +1,78 @@
+import type { KpiMetric } from "@/types";
+
+export const metrics: KpiMetric[] = [
+  {
+    templateId: "T-001",
+    metric: "Sapling survival rate",
+    baseline: "~40% (municipal drives)",
+    yearOneTarget: "75% (Familial Forestry avg)",
+    yearThreeTarget: "90%+ (self-sustaining)",
+    source: "BMC T-Ward tree dept; familialforestry.org",
+    sdg: "SDG 15 — Life on Land",
+  },
+  {
+    templateId: "T-002",
+    metric: "PM2.5 µg/m³ Ghatkopar annual avg",
+    baseline: "65–80 µg/m³ (above WHO 60)",
+    yearOneTarget: "55 µg/m³ (−10%)",
+    yearThreeTarget: "<40 µg/m³ (WHO guideline)",
+    source: "CPCB Ghatkopar AQI station, 2024",
+    sdg: "SDG 11 — Sustainable Cities",
+  },
+  {
+    templateId: "T-003",
+    metric: "Visible littering incidents / month at Pantnagar nalla",
+    baseline: "Establish June 2026 baseline",
+    yearOneTarget: "−50% from baseline",
+    yearThreeTarget: "Zero visible dumping",
+    source: "SevaPremi volunteer audit (GPS)",
+    sdg: "SDG 12/14 — Responsible Consumption",
+  },
+  {
+    templateId: "T-004",
+    metric: "Flood complaints per monsoon season",
+    baseline: "~200+ (BMC 2023/24)",
+    yearOneTarget: "150 (−25%)",
+    yearThreeTarget: "80 (−60%)",
+    source: "BMC 1916 complaints; NDMA reports",
+    sdg: "SDG 11 — Sustainable Cities",
+  },
+  {
+    templateId: "T-005",
+    metric: "% eligible Ghatkopar buildings with solar",
+    baseline: "<2% (MEDA / MNRE)",
+    yearOneTarget: "5% (50+ new societies)",
+    yearThreeTarget: "15% (150+ societies)",
+    source: "PM Surya Ghar portal; MEDA FY24-25",
+    sdg: "SDG 7 — Affordable Clean Energy",
+  },
+  {
+    templateId: "T-006",
+    metric: "Ghatkopar youth reached / year",
+    baseline: "~200 (existing programs)",
+    yearOneTarget: "2,000 (10×)",
+    yearThreeTarget: "10,000 (50×)",
+    source: "JeevanShala enrollment; SevaPremi internal",
+    sdg: "SDG 4 — Quality Education",
+  },
+  {
+    templateId: "T-007",
+    metric: "Construction dust complaints resolved",
+    baseline: "<10% resolution typical",
+    yearOneTarget: "50% with batched MPCB escalation",
+    yearThreeTarget: "Mandatory dust-netting compliance",
+    source: "MPCB complaint logs; SevaPremi tracker",
+    sdg: "SDG 11 — Sustainable Cities",
+  },
+  {
+    templateId: "T-008",
+    metric: "Shaded walking routes around Ghatkopar Station",
+    baseline: "~3 of 20 routes shaded",
+    yearOneTarget: "10 routes shaded + cool roof pilot",
+    yearThreeTarget: "Urban forest corridor along Eastern Hwy",
+    source: "Heat audit; satellite imagery",
+    sdg: "SDG 11 — Sustainable Cities",
+  },
+];
+
+export const metricByTemplate = (id: string) => metrics.find((m) => m.templateId === id);
