@@ -54,6 +54,9 @@ export function ExpertSection() {
                 <div className="sp-org__type">{o.type} · {o.focus}</div>
                 <div className="sp-org__name">{o.name}</div>
                 <div className="sp-org__desc">{o.description}</div>
+                <div className="sp-org__caps" aria-label="Capabilities">
+                  {o.capabilities.map((c) => <span key={c} className="sp-cap">{c}</span>)}
+                </div>
               </div>
             ))}
           </div>
