@@ -3,6 +3,7 @@ import type { SolutionTemplate } from "@/types";
 export const templates: SolutionTemplate[] = [
   {
     id: "T-001",
+    quickImpact: "🌳 +500 trees adopted",
     problem: "Urban Tree Cover Loss + Heat Island",
     category: "Green Cover",
     summary:
@@ -24,6 +25,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-002",
+    quickImpact: "🌬 -15% PM2.5 on LBS Marg",
     problem: "Air Pollution – Vehicle Exhaust (LBS Marg)",
     category: "Air Quality",
     summary:
@@ -45,6 +47,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-003",
+    quickImpact: "♻ Divert 2 tons plastic/yr",
     problem: "Plastic Waste – Nalla & Road Littering",
     category: "Waste",
     summary:
@@ -66,6 +69,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-004",
+    quickImpact: "💧 Reduce flood risk 40%",
     problem: "Monsoon Flooding – Drain Blockage",
     category: "Flood & Water",
     summary:
@@ -87,6 +91,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-005",
+    quickImpact: "☀ 1.2 MW rooftop solar",
     problem: "Low Solar Adoption in Societies",
     category: "Clean Energy",
     summary:
@@ -108,6 +113,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-006",
+    quickImpact: "🎓 2,000 youth trained",
     problem: "Youth Climate Unawareness",
     category: "Education",
     summary:
@@ -129,6 +135,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-007",
+    quickImpact: "🚧 -30% dust complaints",
     problem: "Construction Site Dust (Metro expansion)",
     category: "Air Quality",
     summary:
@@ -150,6 +157,7 @@ export const templates: SolutionTemplate[] = [
   },
   {
     id: "T-008",
+    quickImpact: "🌡 Reduce heat by 2°C",
     problem: "Heat Stress – No Shade Infrastructure",
     category: "Green Cover",
     summary:
