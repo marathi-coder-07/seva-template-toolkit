@@ -18,7 +18,10 @@ export interface SolutionTemplate {
   severity: Severity;
   partnerOrgs: string[];
   fundingSources: string[];
+  quickImpact: string;
 }
+
+export type OrgCapability = "Funding" | "Training" | "Implementation" | "Technology";
 
 export interface KpiMetric {
   templateId: string;
