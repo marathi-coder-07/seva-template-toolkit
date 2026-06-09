@@ -20,8 +20,9 @@ export function ImpactPanel({ template }: Props) {
   }
 
   return (
-    <aside className="sp-impact" aria-live="polite">
-      <span className="sp-impact__eyebrow">Impact Projection · {template.id}</span>
+    <aside className="sp-impact is-active" aria-live="polite" aria-label="Impact projection">
+      <span className="sp-impact__viewing">Currently viewing: {template.id}</span>
+      <span className="sp-impact__eyebrow">Impact Projection</span>
       <h3 className="sp-impact__title">{template.problem}</h3>
       <div className="sp-impact__metric">📐 {metric.metric}</div>
 
