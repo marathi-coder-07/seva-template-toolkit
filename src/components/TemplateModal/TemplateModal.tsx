@@ -1,14 +1,24 @@
 import { useEffect } from "react";
 import type { SolutionTemplate } from "@/types";
 import { metricByTemplate } from "@/data/metrics";
+import { templates } from "@/data/templates";
 import { difficultyClass } from "@/utils/format";
 
 interface Props {
   template: SolutionTemplate | null;
   onClose: () => void;
+  onOpenTemplate: (t: SolutionTemplate) => void;
 }
 
-export function TemplateModal({ template, onClose }: Props) {
+const JOURNEY = [
+  { title: "Assess Local Problem" },
+  { title: "Contact Partners" },
+  { title: "Secure Funding" },
+  { title: "Execute Solution" },
+  { title: "Measure Impact" },
+];
+
+export function TemplateModal({ template, onClose, onOpenTemplate }: Props) {
   useEffect(() => {
     if (!template) return;
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
@@ -19,6 +29,7 @@ export function TemplateModal({ template, onClose }: Props) {
 
   if (!template) return null;
   const metric = metricByTemplate(template.id);
+  const related = templates.filter(t => t.category === template.category && t.id !== template.id).slice(0, 3);
 
   return (
     <div className="sp-modal-overlay" onClick={onClose} role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -36,8 +47,8 @@ export function TemplateModal({ template, onClose }: Props) {
               </span>
             </div>
           </div>
-          <button className="sp-modal__close" onClick={onClose} aria-label="Close">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4"><path d="M6 6l12 12M18 6 6 18"/></svg>
+          <button className="sp-modal__close" onClick={onClose} aria-label="Close dialog">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
           </button>
         </div>
 
@@ -106,6 +117,39 @@ export function TemplateModal({ template, onClose }: Props) {
             <span className="sp-section__label">Expert verifier</span>
             <div className="sp-section__body">✅ {template.expertVerifier}</div>
           </div>
+
+          <div className="sp-section">
+            <span className="sp-section__label">How to implement · Adoption journey</span>
+            <ol className="sp-journey" aria-label="Adoption journey">
+              {JOURNEY.map((step, i) => (
+                <li className="sp-step" key={step.title}>
+                  <div className="sp-step__num">{i + 1}</div>
+                  <div className="sp-step__title">{step.title}</div>
+                  {i < JOURNEY.length - 1 && <span className="sp-step__line" aria-hidden="true" />}
+                </li>
+              ))}
+            </ol>
+          </div>
+
+          {related.length > 0 && (
+            <div className="sp-section">
+              <span className="sp-section__label">Related solutions · {template.category}</span>
+              <div className="sp-related">
+                {related.map((r) => (
+                  <button
+                    key={r.id}
+                    className="sp-related__card"
+                    onClick={() => onOpenTemplate(r)}
+                    aria-label={`Open related template ${r.id}: ${r.problem}`}
+                  >
+                    <span className="sp-related__id">{r.id}</span>
+                    <span className="sp-related__name">{r.problem}</span>
+                    <span className="sp-related__impact">{r.quickImpact}</span>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         <div className="sp-modal__footer">
