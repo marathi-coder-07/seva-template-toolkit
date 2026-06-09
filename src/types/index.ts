@@ -39,6 +39,7 @@ export interface Organization {
   focus: string;
   description: string;
   website: string;
+  capabilities: OrgCapability[];
 }
 
 export interface Expert {
