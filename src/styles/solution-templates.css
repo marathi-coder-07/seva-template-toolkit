@@ -469,3 +469,307 @@
 .sp-btn-ghost:focus-visible {
   outline: 2px solid var(--sp-teal); outline-offset: 2px;
 }
+
+/* ============ ADD THESE MOBILE IMPROVEMENTS ============ */
+
+/* Better mobile spacing */
+@media (max-width: 640px) {
+  .sp-hero {
+    padding: 32px 20px 16px;
+  }
+  
+  .sp-hero__title {
+    font-size: 32px;
+  }
+  
+  .sp-hero__sub {
+    font-size: 15px;
+    padding: 0 8px;
+  }
+  
+  .sp-hero__meta {
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    border-radius: 20px;
+    padding: 12px 16px;
+  }
+  
+  .sp-controls {
+    padding: 0 20px;
+    margin-top: 20px;
+  }
+  
+  .sp-layout {
+    padding: 0 20px 60px;
+  }
+  
+  .sp-card {
+    padding: 18px;
+  }
+  
+  .sp-card__title {
+    font-size: 18px;
+  }
+  
+  .sp-card__summary {
+    font-size: 13.5px;
+  }
+  
+  .sp-proof-row {
+    flex-wrap: wrap;
+  }
+  
+  .sp-proof {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
+  
+  .sp-card__impact {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+}
+
+/* Better filter bar on very small screens */
+@media (max-width: 480px) {
+  .sp-filter-group {
+    gap: 4px;
+  }
+  
+  .sp-filter-group__label {
+    font-size: 10px;
+  }
+  
+  .sp-chip {
+    padding: 4px 10px;
+    font-size: 11px;
+  }
+  
+  .sp-search input {
+    font-size: 14px;
+  }
+  
+  .sp-search__count {
+    font-size: 11px;
+  }
+}
+
+/* Impact panel sticky on mobile - make it not sticky */
+@media (max-width: 1024px) {
+  .sp-impact {
+    position: relative;
+    top: 0;
+    margin-top: 20px;
+  }
+  
+  .sp-controls--sticky {
+    top: 56px;
+  }
+}
+
+/* Better modal on mobile */
+@media (max-width: 600px) {
+  .sp-modal {
+    max-width: 95%;
+    border-radius: 16px;
+  }
+  
+  .sp-modal__head {
+    padding: 18px 20px;
+  }
+  
+  .sp-modal__title {
+    font-size: 20px;
+  }
+  
+  .sp-modal__body {
+    padding: 16px 20px 20px;
+  }
+  
+  .sp-modal__footer {
+    padding: 14px 20px;
+    flex-direction: column-reverse;
+  }
+  
+  .sp-btn-primary, .sp-btn-ghost {
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+  }
+  
+  .sp-kpi-row {
+    gap: 8px;
+  }
+  
+  .sp-kpi-item__l {
+    font-size: 10px;
+  }
+  
+  .sp-kpi-item__v {
+    font-size: 12px;
+  }
+}
+
+/* Header improvements for mobile */
+@media (max-width: 900px) {
+  .sp-header__inner {
+    padding: 10px 16px;
+    justify-content: space-between;
+  }
+  
+  .sp-loc-pill {
+    display: none;
+  }
+  
+  .sp-header__right {
+    gap: 8px;
+  }
+  
+  .sp-link-btn {
+    font-size: 13px;
+  }
+  
+  .sp-join-btn {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+}
+
+/* Empty state improvements */
+@media (max-width: 640px) {
+  .sp-empty-state {
+    padding: 40px 20px;
+  }
+  
+  .sp-empty-state__title {
+    font-size: 18px;
+  }
+  
+  .sp-empty-state__sub {
+    font-size: 13px;
+  }
+  
+  .sp-empty-state__btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+/* Trust section mobile improvements */
+@media (max-width: 640px) {
+  .sp-trust {
+    padding: 40px 20px;
+  }
+  
+  .sp-trust__title {
+    font-size: 28px;
+  }
+  
+  .sp-trust__sub {
+    font-size: 14px;
+  }
+  
+  .sp-stat {
+    padding: 16px;
+  }
+  
+  .sp-stat__num {
+    font-size: 28px;
+  }
+  
+  .sp-stat__lbl {
+    font-size: 11px;
+  }
+  
+  .sp-trust__cols {
+    gap: 24px;
+  }
+}
+
+/* Footer mobile */
+@media (max-width: 640px) {
+  .sp-footer {
+    padding: 28px 20px;
+    font-size: 11px;
+  }
+}
+
+/* Touch-friendly tap targets on mobile */
+@media (max-width: 768px) {
+  .sp-card__cta,
+  .sp-chip,
+  .sp-btn-primary,
+  .sp-btn-ghost,
+  .sp-join-btn,
+  .sp-modal__close,
+  .sp-related__card,
+  .sp-empty-state__btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .sp-card__cta {
+    min-height: auto;
+  }
+  
+  .sp-chip {
+    min-height: 36px;
+  }
+}
+
+/* ============ FIX WHITE SPACE ON RIGHT SIDE ============ */
+
+html {
+  box-sizing: border-box;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.sp-page {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
+.sp-hero,
+.sp-controls,
+.sp-layout,
+.sp-trust,
+.sp-footer {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.sp-header__inner {
+  flex-wrap: wrap;
+}
+
+.sp-card,
+.sp-stat,
+.sp-expert,
+.sp-org,
+.sp-proof {
+  max-width: 100%;
+  word-break: break-word;
+}
+
+.sp-filters {
+  width: 100%;
+  box-sizing: border-box;
+}
