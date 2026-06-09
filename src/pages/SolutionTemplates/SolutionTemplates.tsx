@@ -52,7 +52,7 @@ export function SolutionTemplatesPage() {
         </div>
       </section>
 
-      <div className="sp-controls">
+      <div className="sp-controls sp-controls--sticky">
         <SearchBar value={query} onChange={setQuery} count={filtered.length} />
         <FilterBar
           categories={categories}
@@ -65,12 +65,24 @@ export function SolutionTemplatesPage() {
       <div className="sp-layout">
         <div className="sp-grid">
           {filtered.length === 0 ? (
-            <div className="sp-empty">No templates match these filters yet. Try clearing one.</div>
+            <div className="sp-empty-state" role="status">
+              <div className="sp-empty-state__icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/>
+                </svg>
+              </div>
+              <h3 className="sp-empty-state__title">No templates match your filters</h3>
+              <p className="sp-empty-state__sub">Try clearing filters or searching another category — we have 8 verified Ghatkopar templates ready.</p>
+              <button className="sp-empty-state__btn" onClick={() => {
+                setQuery(""); setCategory(null); setDifficulty(null); setSeverity(null);
+              }}>Clear all filters</button>
+            </div>
           ) : (
             filtered.map((t) => (
               <TemplateCard
                 key={t.id}
                 template={t}
+                isActive={hovered?.id === t.id}
                 onOpen={() => setOpen(t)}
                 onHover={() => setHovered(t)}
               />
@@ -82,7 +94,7 @@ export function SolutionTemplatesPage() {
 
       <ExpertSection />
       <Footer />
-      <TemplateModal template={open} onClose={() => setOpen(null)} />
+      <TemplateModal template={open} onClose={() => setOpen(null)} onOpenTemplate={(t) => setOpen(t)} />
     </div>
   );
 }
