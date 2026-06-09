@@ -1,12 +1,12 @@
 import type { Organization, Expert, VulnerabilityZone } from "@/types";
 
 export const organizations: Organization[] = [
-  { name: "Mission Green Mumbai", type: "NGO", focus: "Urban pocket forests", description: "Pocket forests 100 sq.ft.+; replicable via WhatsApp.", website: "@MissionGreenMumbai" },
-  { name: "Vanashakti", type: "NGO", focus: "Mangroves & forests", description: "Mumbai mangrove and wetland protection; CRZ enforcement.", website: "vanashakti.in" },
-  { name: "Recykal", type: "Startup", focus: "Waste tech", description: "Digital marketplace connecting waste generators to recyclers.", website: "recykal.com" },
-  { name: "Chakr Innovation", type: "Startup", focus: "Diesel soot capture", description: "Retrofits diesel generators to capture particulate matter.", website: "chakrinnovation.com" },
-  { name: "Afforestt", type: "Startup", focus: "Miyawaki forests", description: "Designs Miyawaki forests for cities and companies.", website: "afforestt.com" },
-  { name: "Varaha", type: "Startup", focus: "Carbon farming", description: "Pays Indian farmers for carbon sequestration.", website: "varaha.earth" },
+  { name: "Mission Green Mumbai", type: "NGO", focus: "Urban pocket forests", description: "Pocket forests 100 sq.ft.+; replicable via WhatsApp.", website: "@MissionGreenMumbai", capabilities: ["Training", "Implementation"] },
+  { name: "Vanashakti", type: "NGO", focus: "Mangroves & forests", description: "Mumbai mangrove and wetland protection; CRZ enforcement.", website: "vanashakti.in", capabilities: ["Training", "Implementation"] },
+  { name: "Recykal", type: "Startup", focus: "Waste tech", description: "Digital marketplace connecting waste generators to recyclers.", website: "recykal.com", capabilities: ["Technology", "Implementation"] },
+  { name: "Chakr Innovation", type: "Startup", focus: "Diesel soot capture", description: "Retrofits diesel generators to capture particulate matter.", website: "chakrinnovation.com", capabilities: ["Technology", "Implementation"] },
+  { name: "Afforestt", type: "Startup", focus: "Miyawaki forests", description: "Designs Miyawaki forests for cities and companies.", website: "afforestt.com", capabilities: ["Training", "Implementation"] },
+  { name: "Varaha", type: "Startup", focus: "Carbon farming", description: "Pays Indian farmers for carbon sequestration.", website: "varaha.earth", capabilities: ["Funding", "Technology"] },
 ];
 
 export const experts: Expert[] = [
